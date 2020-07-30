@@ -1,4 +1,5 @@
 class TradingsController < ApplicationController
+  before_action :authenticate_user!
   layout 'simple'
   require "payjp"
   def new
@@ -6,7 +7,8 @@ class TradingsController < ApplicationController
     @deliver_address = current_user.deliver_address
     @user_card = current_user.user_card
     @card = UserCard.find_by(user_id: current_user.id)
-    Payjp.api_key = Rails.application.secrets.payjp_access_key
+    if @user_card.present?
+      Payjp.api_key = Rails.application.secrets.payjp_access_key
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @customer_card = customer.cards.retrieve(@card.card_id)
       @card_brand = @customer_card.brand
@@ -26,6 +28,7 @@ class TradingsController < ApplicationController
       end
       @exp_month = @customer_card.exp_month.to_s
       @exp_year = @customer_card.exp_year.to_s.slice(2,3)
+    end
   end
 
   def create
