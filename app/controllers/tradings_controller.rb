@@ -7,6 +7,7 @@ class TradingsController < ApplicationController
     @deliver_address = current_user.deliver_address
     @user_card = current_user.user_card
     @card = UserCard.find_by(user_id: current_user.id)
+    
     if @user_card.present?
       Payjp.api_key = Rails.application.secrets.payjp_access_key
       customer = Payjp::Customer.retrieve(@card.customer_id)
