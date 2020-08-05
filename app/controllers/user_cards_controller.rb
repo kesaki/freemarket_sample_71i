@@ -1,6 +1,6 @@
 class UserCardsController < ApplicationController
   require "payjp"
-  
+  layout 'mypage'
   def new
     @card = UserCard.find_by(user_id: current_user.id)
     if @card.present?

@@ -1,4 +1,5 @@
 class UserAddressesController < ApplicationController
+  layout 'mypage'
   def new
     if UserAddress.exists?(user_id: current_user)
       redirect_to edit_user_address_path(current_user.user_address)

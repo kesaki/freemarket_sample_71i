@@ -1,5 +1,5 @@
 class DeliverAddressesController < ApplicationController
-  layout 'maypage'
+  layout 'mypage'
   def new
     @@path = Rails.application.routes.recognize_path(request.referer)
     if DeliverAddress.exists?(user_id: current_user) 

@@ -1,4 +1,9 @@
-.mypage_box
-  %main.mypage_box_block
-    =render "shared/mypage_side"
-    =render "create"
+.create
+  .create__frame
+    .create__frame__message
+      登録が完了しました。
+    %ul.create__frame__btns
+      %li.my_page__link
+        = link_to "マイページに戻る", user_path(current_user.id), class: "my_page__link__btn"
+      %li.credit_cards_index_link
+        = link_to "登録カード一覧", user_card_path(current_user.id), class: "credit_cards_index_link__btn"

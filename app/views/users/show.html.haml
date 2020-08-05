@@ -1,4 +1,37 @@
-.mypage_box
-  %main.mypage_box_block
-    =render "shared/mypage_side"
-    =render "main"
+.main_contaier_l-side
+  = image_tag src="backgraund.png", class: "main_contaier_l-side_user-icon"
+  .main_contaier_l-side_todo
+    .main_contaier_l-side_todo_tab
+      %ul.main_contaier_l-side_todo_tab_label
+        %li.main_contaier_l-side_todo_tab_label_item.is-active お知らせ
+        %li.main_contaier_l-side_todo_tab_label_itemやることリスト
+    .main_contaier_l-side_todo_tabcontent
+      .main_contaier_l-side_todo_tabcontent_menu1
+        %ul.main_contaier_l-side_todo_tabcontent_menu1_messages
+          %li.main_contaier_l-side_todo_tabcontent_menu1_messages_body.is-show<
+            = link_to '#', class: 'main_contaier_l-side_todo_tabcontent_menu1_messages_body_link' do
+              お買い得情報！！
+          %li.main_contaier_l-side_todo_tabcontent_menu1_messages_body<
+            = link_to '#', class: 'main_contaier_l-side_todo_tabcontent_menu1_messages_body_link' do
+              クレジットカード登録
+    .main_contaier_l-side_todo_button
+      =link_to '#', class: "main_contaier_l-side_todo_button_link" do
+        一覧を見る
+      
+          
+  .main_contaier_l-side_todo
+    .main_contaier_l-side_todo_tab
+      %ul.main_contaier_l-side_todo_tab_label
+        %li.main_contaier_l-side_todo_tab_label_item.is-active 取引中
+        %li.main_contaier_l-side_todo_tab_label_item 過去の取引
+    .main_contaier_l-side_todo_tabcontent
+      .main_contaier_l-side_todo_tabcontent_menu1
+        %ul.main_contaier_l-side_todo_tabcontent_menu1_messages
+          %li.main_contaier_l-side_todo_tabcontent_menu1_messages_body.is-show<
+            = link_to '#', class: 'main_contaier_l-side_todo_tabcontent_menu1_messages_body_link' do
+              プラズマテレビ
+          %li.main_contaier_l-side_todo_tabcontent_menu1_messages_body<
+            = link_to '#', class: 'main_contaier_l-side_todo_tabcontent_menu1_messages_body_link' do
+              プラズマテレビ
+
+
