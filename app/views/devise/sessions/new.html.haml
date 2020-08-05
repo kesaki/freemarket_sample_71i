@@ -4,21 +4,25 @@
       .login-panel-no-account
         %p.login-panel-no-account__info
           アカウントをお持ちでない方はこちら
-        = link_to '新規会員登録',new_user_registration_path, class: 'login-panel-no-account__make-account'
+        = link_to '新規会員登録',users_signup_index_path, class: 'login-panel-no-account__make-account'
       .login-panel-by-sns
+        = link_to user_google_oauth2_omniauth_authorize_path, method: :post do
+          %button.google-login
+            Googleでログイン
+        = link_to user_facebook_omniauth_authorize_path, method: :post do
+          %button.face-book-login
+            %i.fab.fa-facebook-square.fa-2x
+            Facebookでログイン
       .login-panel-by-email
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .email-field
             .field-label
-              -# = f.label :メールアドレス
             .field-input
-              = f.email_field :email, autofocus: true, class: 'email-field-form'
+              = f.email_field :email, autofocus: true, class: 'email-field-form', placeholder: ' メールアドレス'
           .password-field
             .field-label
-              -# = f.label :パスワード
-              %i (英数字8文字以上)
             .field-input
-              = f.password_field :password, autocomplete: "off", class: 'password-field-form'
+              = f.password_field :password, autocomplete: "off", class: 'password-field-form', placeholder: ' パスワード'
           .robocheck-field
           .actions
             = f.submit "ログイン", class: 'login-btn'

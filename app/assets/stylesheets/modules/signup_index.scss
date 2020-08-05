@@ -1,0 +1,66 @@
+.signup_box {
+  &-container {
+    background-color: $white;
+    width: 700px;
+    margin: 0 auto;
+    &-title {
+      font-weight: 700;
+      line-height: 1.5;
+      text-align: center;
+      font-size: 22px;
+      padding: 32px;
+    }
+    &-main {
+      padding: 24px 16px 40px;
+      border-top: 2px solid $back;
+      &-content {
+        margin: 0 auto;
+        max-width: 343px;
+        button {
+          height: 50px;
+          width: 100%;
+          margin-top: 16px;
+          display: block;
+          line-height: 48px;
+          font-size: 14px;
+          cursor: pointer;
+          position: relative;
+          text-align: center;
+          border-radius: 4px;
+          border: 1px solid transparent;
+          outline: none;
+          i {
+            position: absolute;
+            left: 12px;
+            top: 12px;
+          }
+        }
+        .mail-signup {
+          color: $white;
+          background-color: $red;
+          border: $red solid 1px;
+        }
+        .google-signup {
+          border: #979797 solid 1px;
+          background-color: $white;
+          background-image: image-url('googlelogin.svg');
+          background-repeat: no-repeat;
+        }
+        .face-book-signup {
+          background-color: #385185;
+          color: $white;
+          border: 1px solid transparent;
+        }
+        .form-group {
+          margin-top: 40px;
+          p {
+            a {
+              text-decoration: none;
+              color: #0099e8;
+            }
+          }
+        }
+      }
+    }
+  }
+}

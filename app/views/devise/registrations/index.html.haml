@@ -1,0 +1,27 @@
+%main.signup_box
+  %section.signup_box-container
+    %h2.signup_box-container-title
+      新規会員登録
+
+    .signup_box-container-main
+      .signup_box-container-main-content
+        = link_to new_user_registration_path do
+          %button.mail-signup
+            %i.far.fa-envelope.fa-2x
+            メールアドレスで登録する
+        = link_to user_google_oauth2_omniauth_authorize_path, method: :post do
+          %button.google-signup
+            Googleで登録する
+        = link_to user_facebook_omniauth_authorize_path, method: :post do
+          %button.face-book-signup
+            %i.fab.fa-facebook-square.fa-2x
+            Facebookで登録する
+        .form-group
+          %p.form-info-text
+            登録することで、
+            %a
+              利用規約
+            と
+            %a
+              プライバシーポリシー
+            に同意したものとみなされます。

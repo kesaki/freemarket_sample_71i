@@ -14,14 +14,14 @@
                   %span.form-require
                     必須
                 .field-input
-                  = f.text_field :nickname, autofocus: true, class: 'field-input__box'
+                  = f.text_field :nickname, autofocus: true, class: 'field-input__box', placeholder: ' 例)フリマ太郎'
               .field
                 .field-label
                   = f.label :メールアドレス, class: 'field-label__name'
                   %span.form-require
                     必須
                 .field-input
-                  = f.email_field :email, class: 'field-input__box'
+                  = f.email_field :email, class: 'field-input__box', placeholder: ' PC・携帯どちらでも可'
 
               .password-part
                 .field
@@ -30,7 +30,7 @@
                     %span.form-require
                       必須
                   .field-input
-                    = f.password_field :password, autocomplete: "off", class: 'field-input__box'
+                    = f.password_field :password, autocomplete: "off", class: 'field-input__box', placeholder: ' ７文字以上の半角英数字'
                 .field
                   .field-label
                     = f.label :パスワード, class: 'field-label__name'
@@ -52,16 +52,16 @@
                   %span.form-require
                     必須
                 .field-input
-                  = f.text_field :family_name, autofocus: true, class: 'field-input__box family-name'
-                  = f.text_field :first_name, autofocus: true, class: 'field-input__box'
+                  = f.text_field :family_name, autofocus: true, class: 'field-input__box family-name', placeholder: ' 例)山田'
+                  = f.text_field :first_name, autofocus: true, class: 'field-input__box', placeholder: ' 例)彩'
               .field
                 .field-label
                   = f.label :お名前カナ, class: 'field-label__name'
                   %span.form-require
                     必須
                 .field-input
-                  = f.text_field :family_name_kana, autofocus: true, class: 'field-input__box family-name'
-                  = f.text_field :first_name_kana, autofocus: true, class: 'field-input__box'
+                  = f.text_field :family_name_kana, autofocus: true, class: 'field-input__box family-name', placeholder: ' 例)ヤマダ'
+                  = f.text_field :first_name_kana, autofocus: true, class: 'field-input__box', placeholder: ' 例)アヤ'
               .field
                 .field-label
                   = f.label :生年月日, class: 'field-label__name'
