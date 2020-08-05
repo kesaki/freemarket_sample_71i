@@ -1,4 +1,10 @@
-.mypage_box
-  %main.mypage_box_block
-    =render "shared/mypage_side"
-    =render "create"
+.pay
+  .main_contents
+    .main_details
+      .main_details__message
+        購入が完了しました。
+    %ul.purchased__links
+      %li.purchased__links__TopPage
+        = link_to "トップページに戻る", root_path, class: "purchased__links__TopPage__btn"
+      %li.purchased__links__index
+        = link_to "購入商品一覧", "#", class: "purchased__links__index__btn"

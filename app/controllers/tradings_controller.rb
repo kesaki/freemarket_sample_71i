@@ -33,6 +33,7 @@ class TradingsController < ApplicationController
   end
 
   def create
+    render layout: 'mypage'
     trading = Trading.new(trading_params)
     pay
     trading.save
