@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   require "payjp"
-
+  before_action :authenticate_user!, only:[:new]
   def new
     @item = Item.new
     @item.images.new
