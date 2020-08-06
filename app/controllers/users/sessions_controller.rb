@@ -7,6 +7,13 @@ class Users::SessionsController < Devise::SessionsController
     user_path(current_user)
   end 
 
+  def new
+    super
+    if flash[:notice].present?
+      flash.delete(:notice)
+    end
+  end
+
   def edit
     render layout: 'application'
   end
