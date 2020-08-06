@@ -17,18 +17,18 @@
         margin: 0 auto;
         .flash_box {
           color: #fff;
-          background-color: #ea352d;
+          background-color: $blue;
+          margin-top: 16px;
           font-weight: 400px;
-          margin-top: 32px;
           width: 100%;
           text-align: center;
           line-height: 48px;
           border-radius: 4px;
           font-size: 14px;
-          border: 1px solid #ea352d;
+          border: 1px solid $blue;
         }
         .customerform__info-1 {
-          margin: 8px 0 0;
+          margin: 30px 0 0;
           line-height: 1.5;
           font-size: 14px;
         }

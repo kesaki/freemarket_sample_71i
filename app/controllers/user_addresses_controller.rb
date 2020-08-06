@@ -30,9 +30,10 @@ class UserAddressesController < ApplicationController
     end
   end
 
+  private
+  def user_address_params
+    params.require(:user_address).permit(:user_yubin_bango,:user_todofuken,:user_shichoson,:user_banchi,:user_building).merge(user_id: current_user.id)
+  end
 end
 
-private
-def user_address_params
-  params.require(:user_address).permit(:user_yubin_bango,:user_todofuken,:user_shichoson,:user_banchi,:user_building).merge(user_id: current_user.id)
-end
+

@@ -17,20 +17,19 @@
       margin: 0 auto;
       .flash_box {
         color: #fff;
-        background-color: #ea352d;
+        background-color: $blue;
         font-weight: 400px;
-        margin-top: 32px;
         width: 100%;
         text-align: center;
         line-height: 48px;
         border-radius: 4px;
         font-size: 14px;
-        border: 1px solid #ea352d;
+        border: 1px solid $blue;
       }
       .form_group{
         font-weight: 600;
         &-first {
-          margin: 0;
+          margin-top: 30px;
         }
         margin: 32px 0 24px;
         &__label {

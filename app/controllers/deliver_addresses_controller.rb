@@ -2,18 +2,9 @@ class DeliverAddressesController < ApplicationController
   layout 'mypage'
   def new
     @@path = Rails.application.routes.recognize_path(request.referer)
-    if DeliverAddress.exists?(user_id: current_user) 
-      redirect_to edit_deliver_address_path(DeliverAddress.find_by(user_id: current_user))
-      if @@path[:controller] == 'tradings'
-        render layout: 'simple'
-      end
-    else
-      @deliver_address = DeliverAddress.new
-      if @@path[:controller] == 'tradings'
-        render layout: 'simple'
-      end
-    end
-
+    redirect_to edit_deliver_address_path(DeliverAddress.find_by(user_id: current_user)) if DeliverAddress.exists?(user_id: current_user) 
+    @deliver_address = DeliverAddress.new
+    render layout: 'simple' if @@path[:controller] == 'tradings'
   end
   
   def create
@@ -32,9 +23,7 @@ class DeliverAddressesController < ApplicationController
   def edit
     @@path = Rails.application.routes.recognize_path(request.referer)
     @deliver_address = DeliverAddress.find_by(user_id: current_user)
-    if @@path[:controller] == 'tradings'
-      render layout: 'simple'
-    end
+    render layout: 'simple' if @@path[:controller] == 'tradings'
   end
 
   def update
@@ -49,9 +38,9 @@ class DeliverAddressesController < ApplicationController
       redirect_to edit_deliver_address_path(current_user.deliver_address), alert: "入力情報を確認してください"
     end
   end
-end
 
-private
-def deliver_address_params
-  params.require(:deliver_address).permit(:deliver_family_name,:deliver_first_name,:deliver_family_name_kana,:deliver_first_name_kana,:deliver_yubin_bango,:deliver_todofuken,:deliver_shichoson,:deliver_banchi,:deliver_building,:deliver_tel_no).merge(user_id: current_user.id)
+  private
+  def deliver_address_params
+    params.require(:deliver_address).permit(:deliver_family_name,:deliver_first_name,:deliver_family_name_kana,:deliver_first_name_kana,:deliver_yubin_bango,:deliver_todofuken,:deliver_shichoson,:deliver_banchi,:deliver_building,:deliver_tel_no).merge(user_id: current_user.id)
+  end
 end

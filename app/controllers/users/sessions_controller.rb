@@ -11,4 +11,11 @@ class Users::SessionsController < Devise::SessionsController
     render layout: 'application'
   end
 
+  def destroy
+    super
+    if flash[:notice].present?
+      flash.delete(:notice)
+    end
+  end
+
 end
