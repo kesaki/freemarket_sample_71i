@@ -8,15 +8,16 @@ class DeliverAddressesController < ApplicationController
   end
   
   def create
-    deliver_address = DeliverAddress.new(deliver_address_params)
-    if deliver_address.save
+    @deliver_address = DeliverAddress.new(deliver_address_params)
+    if @deliver_address.save
       if @@path[:controller] == 'tradings'
         redirect_to @@path
       else
         redirect_to edit_deliver_address_path(current_user.deliver_address), notice: "お届け先情報を登録しました"
       end
     else
-      redirect_to new_deliver_address_path, alert: "入力情報を確認してください"
+      flash.now[:alert] = "入力情報を確認してください"
+      render :new
     end
   end
 
@@ -27,15 +28,16 @@ class DeliverAddressesController < ApplicationController
   end
 
   def update
-    deliver_address = DeliverAddress.find(params[:id])
-    if  deliver_address.update(deliver_address_params)
+    @deliver_address = DeliverAddress.find(params[:id])
+    if  @deliver_address.update(deliver_address_params)
       if @@path[:controller] == 'tradings'
         redirect_to @@path
       else
         redirect_to edit_deliver_address_path(current_user.deliver_address), notice: "お届け先情報を更新しました"
       end
     else
-      redirect_to edit_deliver_address_path(current_user.deliver_address), alert: "入力情報を確認してください"
+      flash.now[:alert] = "入力情報を確認してください"
+      render :edit
     end
   end
 

@@ -9,11 +9,12 @@ class UserAddressesController < ApplicationController
   end
 
   def create
-    user_address = UserAddress.new(user_address_params)
-    if user_address.save
+    @user_address = UserAddress.new(user_address_params)
+    if @user_address.save
       redirect_to edit_user_address_path(current_user.user_address), notice: "連絡先を登録しました"
     else
-      redirect_to new_user_address_path, alert: '入力事項を確認してください'
+      flash.now[:alert] = "入力情報を確認してください"
+      render :new
     end
   end
 
@@ -22,11 +23,12 @@ class UserAddressesController < ApplicationController
   end
   
   def update
-    user_address = UserAddress.find(params[:id])
-    if user_address.update(user_address_params)
+    @user_address = UserAddress.find(params[:id])
+    if @user_address.update(user_address_params)
       redirect_to edit_user_address_path(current_user.user_address),notice: "連絡先を更新しました"
     else
-      redirect_to edit_user_address_path(current_user.user_address), alert: '入力事項を確認してください'
+      flash.now[:alert] = "入力情報を確認してください"
+      render :edit
     end
   end
 
