@@ -1,100 +1,23 @@
-.mypage_box {
-  background-color: #f5f5f5;
-  border-style: solid; border-width: 1px;
-  border-color: #f5f5f5;
-  .user_session_destroy {
-    background-color: #f5f5f5;
-    padding-bottom: 40px;
-    margin: 40px auto 0;
-    width: 1020px;
-    display: flex;
-    .mypage_side {
-      width: 280px;
-      margin: 0 40px 0 0;
-      .main_contaier_r-side {
-        width: 280px;
-        height: 1300px;
-        margin: 0 40px 0 0;
-        float: left;
-
-        &_list {
-  
-          &_nav {
-            width: 280px;
-            height: 48px;
-            background-color: white;
-            border-top: 1px solid #eee;
-            font-size: 14px;
-            position: relative;
-            display: inline-block;
-    
-            &:hover {
-              opacity: 0.75;
-              background-color: rgb(233, 233, 233);
-            }
-            
-            
-    
-            &_mypage {
-              text-decoration: none;
-              display: block;
-              cursor:pointer;
-              height: 48px;
-              width: 240px;
-              padding: 14px;
-              color: black;
-              &_icon {
-                position: absolute;
-                right: 20px;
-                bottom: 15px;
-              }
-            }
-    
-            &_item {
-              text-decoration: none;
-              display: block;
-              cursor:pointer;
-              height: 48px;
-              width: 240px;
-              padding: 14px;
-              color: black;
-              &_icon {
-                position: absolute;
-                right: 20px;
-                bottom: 15px;
-              }
-            }
-          }
-        }
-  
-        &_title {
-          margin: 40px 0 0;
-        }
-      }
-    }
-    .user_logout {
-      width: 700px;
-      height: 180px;
-      background-color: #fff;
-      padding: 64px;
-      border-top: 1px solid #f5f5f5;
-      &__inside {
-        max-width: 320px;
-        margin: 0 auto;
-       .logout_btn {
-          color: #fff;
-          background-color: $furima;
-          font-weight: 400px;
-          display: block;
-          width: 100%;
-          text-align: center;
-          line-height: 48px;
-          border-radius: 4px;
-          font-size: 14px;
-          border: 1px solid $furima;
-
-        }
-      }
+.user_logout {
+  width: 700px;
+  height: 180px;
+  background-color: #fff;
+  padding: 64px;
+  border-top: 1px solid #f5f5f5;
+  &__inside {
+    max-width: 320px;
+    margin: 0 auto;
+    .logout_btn {
+      color: #fff;
+      background-color: $furima;
+      font-weight: 400px;
+      display: block;
+      width: 100%;
+      text-align: center;
+      line-height: 48px;
+      border-radius: 4px;
+      font-size: 14px;
+      border: 1px solid $furima;
     }
   }
 }

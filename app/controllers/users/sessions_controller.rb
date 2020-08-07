@@ -15,7 +15,7 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def edit
-    render layout: 'application'
+    render layout: 'mypage'
   end
 
   def destroy

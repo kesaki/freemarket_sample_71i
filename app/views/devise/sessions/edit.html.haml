@@ -1,5 +1,3 @@
--# このビューは現在ログアウト機能のテストにのみ使用してます。後ほど別の用途に利用できます。6/2 カワサキ
-.mypage_box
-  %main.user_session_destroy
-    =render "shared/mypage_side"
-    =render "user_logout"
+.user_logout
+  .user_logout__inside
+    =link_to "ログアウト", destroy_user_session_path, method: :delete,class: "logout_btn"
